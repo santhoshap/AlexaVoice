@@ -1,0 +1,454 @@
+{
+  "languageModel": {
+    "types": [
+      {
+        "name": "Account",
+        "values": [
+          {
+            "id": "{Withdrawl}",
+            "name": {
+              "value": "Withdrawl",
+              "synonyms": []
+            }
+          },
+          {
+            "id": "{Loan}",
+            "name": {
+              "value": "Loan",
+              "synonyms": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "loan",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "LN98976",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "TN9XP1",
+              "synonyms": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "ParTypes",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "Rollover",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Age 55",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Age 59.5",
+              "synonyms": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "Quarters",
+        "values": [
+          {
+            "id": "Q1",
+            "name": {
+              "value": "Q12017",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Q22017",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Q32017",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Q42017",
+              "synonyms": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "Reply",
+        "values": [
+          {
+            "id": "",
+            "name": {
+              "value": "No",
+              "synonyms": []
+            }
+          },
+          {
+            "id": "",
+            "name": {
+              "value": "Yes",
+              "synonyms": []
+            }
+          }
+        ]
+      },
+      {
+        "name": "type",
+        "values": [
+          {
+            "id": null,
+            "name": {
+              "value": "Partial",
+              "synonyms": []
+            }
+          },
+          {
+            "id": null,
+            "name": {
+              "value": "Hardship",
+              "synonyms": []
+            }
+          }
+        ]
+      }
+    ],
+    "intents": [
+      {
+        "name": "AMAZON.CancelIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.HelpIntent",
+        "samples": []
+      },
+      {
+        "name": "AMAZON.StopIntent",
+        "samples": []
+      },
+      {
+        "name": "GetAccountBalanceIntent",
+        "samples": [
+          "about my account balance",
+          "tell my account balance",
+          "get my account balance",
+          "account balance",
+          "to get my account balance",
+          "What is my account balance"
+        ],
+        "slots": [
+          {
+            "name": "Pin",
+            "type": "AMAZON.FOUR_DIGIT_NUMBER",
+            "samples": [
+              "{Pin}",
+              "My pin is {Pin}"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "GetElevatedPitch",
+        "samples": [
+          "to give an elevated pitch on our business case",
+          "to present our business case"
+        ],
+        "slots": []
+      },
+      {
+        "name": "GetLoanQueryIntent",
+        "samples": [
+          "if I can get an additional loan",
+          "can i get an additional loan",
+          "am I eligible for an additional loan",
+          "I want to borrow money"
+        ],
+        "slots": [
+          {
+            "name": "Account",
+            "type": "Account",
+            "samples": [
+              "{Account}"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "GetLoanStatus",
+        "samples": [
+          "what is the status of my requested loan",
+          "my loan status"
+        ],
+        "slots": [
+          {
+            "name": "LoanID",
+            "type": "loan"
+          }
+        ]
+      },
+      {
+        "name": "GetMyTaxFormIntent",
+        "samples": [
+          "to e-mail my tax form",
+          "tax form",
+          "send my tax forms",
+          "to mail my tax form",
+          "take me home",
+          "to send my tax form",
+          "get my tax form",
+          "IRS tax form",
+          "to get my tax information",
+          "to get my one thousand and ninety nine form"
+        ],
+        "slots": [
+          {
+            "name": "Quarter",
+            "type": "Quarters",
+            "samples": [
+              "{Quarter}",
+              "for the {Quarter} quarter"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "GetNBNavigationIntent",
+        "samples": [
+          "How do I add a dependent to my medical plan",
+          "How can I add my spouse to my medical plan",
+          "How do I add my child to the medical coverage"
+        ],
+        "slots": []
+      },
+      {
+        "name": "GetNotifications",
+        "samples": [
+          "are there any notifications for me today"
+        ],
+        "slots": []
+      },
+      {
+        "name": "GetWelcomeIntent",
+        "samples": [
+          "welcome people"
+        ],
+        "slots": []
+      },
+      {
+        "name": "GetWithdrawlQueryIntent",
+        "samples": [
+          "Can I do a withdrawal",
+          "if i can do a withdrawl",
+          "for withdrawal details"
+        ],
+        "slots": [
+          {
+            "name": "witdrawltype",
+            "type": "type",
+            "samples": [
+              "{witdrawltype}"
+            ]
+          },
+          {
+            "name": "PartialTypes",
+            "type": "ParTypes"
+          }
+        ]
+      }
+    ],
+    "invocationName": "fidvoice"
+  },
+  "prompts": [
+    {
+      "id": "Elicit.Intent-GetAccountBalanceIntent.IntentSlot-Pin",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Please state your four digit pin"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-GetLoanQueryIntent.IntentSlot-Account",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Do you want a loan or a withdrawl"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-GetLoanStatus.IntentSlot-LoanID",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Please provide your loan ID "
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-GetMyTaxFormIntent.IntentSlot-Quarter",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "for which quarter?"
+        }
+      ]
+    },
+    {
+      "id": "Confirm.Intent-GetMyTaxFormIntent.IntentSlot-Quarter",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "The tax form required is for {Quarter}, correct?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-GetWithdrawlQueryIntent.IntentSlot-witdrawltype",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "Is it for a partial withdraw or a hardship withdrawal?"
+        }
+      ]
+    },
+    {
+      "id": "Elicit.Intent-GetWithdrawlQueryIntent.IntentSlot-PartialTypes",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "What type of partial withdrawl do you want to make, Rollover, Age fifty five or Age fifty nine point five"
+        }
+      ]
+    },
+    {
+      "id": "Confirm.Intent-GetWithdrawlQueryIntent.IntentSlot-PartialTypes",
+      "variations": [
+        {
+          "type": "PlainText",
+          "value": "You are looking for a {witdrawltype} withdrawl of type {PartialTypes}, correct?"
+        }
+      ]
+    }
+  ],
+  "dialog": {
+    "intents": [
+      {
+        "name": "GetAccountBalanceIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "Pin",
+            "type": "AMAZON.FOUR_DIGIT_NUMBER",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-GetAccountBalanceIntent.IntentSlot-Pin"
+            }
+          }
+        ]
+      },
+      {
+        "name": "GetLoanQueryIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "Account",
+            "type": "Account",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-GetLoanQueryIntent.IntentSlot-Account"
+            }
+          }
+        ]
+      },
+      {
+        "name": "GetLoanStatus",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "LoanID",
+            "type": "loan",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-GetLoanStatus.IntentSlot-LoanID"
+            }
+          }
+        ]
+      },
+      {
+        "name": "GetMyTaxFormIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "Quarter",
+            "type": "Quarters",
+            "elicitationRequired": true,
+            "confirmationRequired": true,
+            "prompts": {
+              "elicitation": "Elicit.Intent-GetMyTaxFormIntent.IntentSlot-Quarter",
+              "confirmation": "Confirm.Intent-GetMyTaxFormIntent.IntentSlot-Quarter"
+            }
+          }
+        ]
+      },
+      {
+        "name": "GetWithdrawlQueryIntent",
+        "confirmationRequired": false,
+        "prompts": {},
+        "slots": [
+          {
+            "name": "witdrawltype",
+            "type": "type",
+            "elicitationRequired": true,
+            "confirmationRequired": false,
+            "prompts": {
+              "elicitation": "Elicit.Intent-GetWithdrawlQueryIntent.IntentSlot-witdrawltype"
+            }
+          },
+          {
+            "name": "PartialTypes",
+            "type": "ParTypes",
+            "elicitationRequired": true,
+            "confirmationRequired": true,
+            "prompts": {
+              "elicitation": "Elicit.Intent-GetWithdrawlQueryIntent.IntentSlot-PartialTypes",
+              "confirmation": "Confirm.Intent-GetWithdrawlQueryIntent.IntentSlot-PartialTypes"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
